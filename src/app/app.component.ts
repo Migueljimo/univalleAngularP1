@@ -22,16 +22,24 @@ export class AppComponent {
 
 
   products : Product[] = [
-    { nombre: 'Producto 1', precio: 100 },
-    { nombre: 'Producto 2', precio: 200 },
-    { nombre: 'Producto 3', precio: 300 },
-    { nombre: 'Producto 4', precio: 400 },
-    { nombre: 'Producto 5', precio: 500 },
-    { nombre: 'Producto 6', precio: 600 },
-    { nombre: 'Producto 7', precio: 700 },
-    { nombre: 'Producto 8', precio: 800 },
-    { nombre: 'Producto 9', precio: 900 },
-    { nombre: 'Producto 10', precio: 1000 },
+    { nombre: 'Plato de la casa (PATO)', precio: 50 },
+    { nombre: 'Lomo Montado', precio: 45 },
+    { nombre: 'Medio Lomo', precio: 35 },
+    { nombre: 'Chorrellana', precio: 50 },
+    { nombre: 'Media Chorrellana', precio: 40 },
+    { nombre: 'Bife Chorizo', precio: 65 },
+    { nombre: 'Pique Macho', precio: 90 },
+    { nombre: 'Milanesa de Lomo', precio: 45 },
+    { nombre: 'Media de la Milanesa', precio: 35 },
+    { nombre: 'Milanesa Picada', precio: 45 },
+    { nombre: 'Milanesa de Pollo', precio: 45 },
+    { nombre: 'Milanesa Napolitana', precio: 55 },
+    { nombre: 'Chicharrón de Pollo', precio: 40 },
+    { nombre: 'Jochi', precio: 75 },
+    { nombre: 'Tatú', precio: 65 },
+    { nombre: 'Pescado Surubí', precio: 50 },
+    { nombre: 'Pescado Pacú', precio: 50 },
+    { nombre: 'Almuerzo Familiar', precio: 22 },
   ]
   cart : Product[] = [];
   

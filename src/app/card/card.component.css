@@ -1,25 +1,48 @@
 .product-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 200px;
-    margin: 10px;
-    display: inline-block;
-    vertical-align: top;
-  }
-  
-  .product-card img {
-    width: 100%;
-  }
-  
-  button {
-    padding: 5px 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
+ /*border: 2px solid #8B5E3B; /* Marrón oscuro */
+ /* background-color: #F8E9D2; /* Beige claro */
+ background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+ border: 2px solid #ff4500; /* Borde color fuego */
+ color: white;
+  padding: 15px;
+  width: 220px;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #6B4226; /* Marrón intermedio */
+  font-size: 1.2em;
+}
+
+p {
+  color: #4F3425; /* Marrón oscuro */
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #49cc67; /* Verde vivo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #3aa655; /* Verde más oscuro */
+}

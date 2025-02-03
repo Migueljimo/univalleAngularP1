@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #000; /* Fondo negro */
+    color: white; /* Texto blanco para contraste */
+    font-family: Arial, sans-serif; /* Opcional,aun no está decidido [ara mejora de la apariencia */
+}
+.cartilla {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Ajusta al tamaño de la pantalla */
+    background-color: black; /* Fondo negro */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fuego {
+    position: absolute;
+    top: -20px;  /* Mueve hacia arriba */
+    right: -20px; /* Mueve hacia la derecha */
+    width: 180px; /* Ajusta tamaño */
+    opacity: 0.9; /* Transparencia */
+    pointer-events: none; /* No bloquea clics */
+    z-index: 10; /* Asegura que esté por encima */
+}
+
