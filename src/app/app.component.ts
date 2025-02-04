@@ -4,6 +4,7 @@ import { Componente1Component } from "./componente1/componente1.component";
 import { CardComponent } from './card/card.component';
 import { TskManagerComponent } from './tsk-manager/tsk-manager.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 interface Product {
@@ -13,12 +14,13 @@ interface Product {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CardComponent, CommonModule],
+  imports: [RouterOutlet, CardComponent, CommonModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Proyecto1';
+  searchQuery : string = '';
 
 
   products : Product[] = [
@@ -41,7 +43,16 @@ export class AppComponent {
     { nombre: 'Pescado Pacú', precio: 50 },
     { nombre: 'Almuerzo Familiar', precio: 22 },
   ]
+
+  filteredProducts = this.products;
   cart : Product[] = [];
+
+
+  search() {
+    this.filteredProducts = this.products.filter(product =>
+      product.nombre.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+  }
   
   onAddToCart(product: Product) {
     this.cart.push(product);

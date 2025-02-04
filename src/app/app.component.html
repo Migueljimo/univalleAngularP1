@@ -1,7 +1,11 @@
 <main class="main">
  <div class="product-list">
+  <header>
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Buscar plato..." />
+    <button (click)="search()">Buscar</button>
+  </header>
     <app-card 
-    *ngFor="let product of products" 
+    *ngFor="let product of filteredProducts" 
     [product]="product" 
     (addToCart)="onAddToCart($event)"
     >
