@@ -1,0 +1,12 @@
+<p>detail-menu works!</p>
+
+<div *ngIf="product" class="detalle-container">
+  <h2>{{ product.nombre }}</h2>
+  <p><strong>Precio:</strong> ${{ product.precio }}</p>
+  <p><strong>Descripción:</strong> {{ product.descripcion }}</p>
+  <button (click)="goBack()">Volver</button>
+</div>
+
+<div *ngIf="!product">
+  <p>Producto no encontrado</p>
+</div>

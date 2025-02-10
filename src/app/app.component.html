@@ -1,25 +1,15 @@
 <main class="main">
- <div class="product-list">
-  <header>
-    <input type="text" [(ngModel)]="searchQuery" placeholder="Buscar plato..." />
-    <button (click)="search()">Buscar</button>
-  </header>
-    <app-card 
-    *ngFor="let product of filteredProducts" 
-    [product]="product" 
-    (addToCart)="onAddToCart($event)"
-    >
-      
-    </app-card>
-  </div>
- 
-  <div class="cart">
-    <h3>Carrito de Compras</h3>
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+
+  <nav>
     <ul>
-      <li *ngFor="let item of cart">{{ item.nombre }} - ${{ item.precio }}</li>
+      <li><a routerLink="/dashboard" routerLinkActive="active">HOME</a></li>
+      <li><a routerLink="/dashboard/pages/detail-menu" routerLinkActive="active">DETAILS</a></li>
+      
     </ul>
-    <h2>Total: </h2>
-  </div>
+  </nav>
 
 </main>
 
