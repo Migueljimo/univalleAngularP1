@@ -17,4 +17,10 @@ export class CardComponent {
   onAddToCart() {
     this.addToCart.emit(this.product);
   }
+
+   // ✅ Agregar el producto al carrito sin activar el evento de la tarjeta
+   addToCartHandler(event: Event) {
+    event.stopPropagation(); // 🔥 Detiene el evento del clic en la tarjeta
+    this.addToCart.emit(this.product);
+  }
 }

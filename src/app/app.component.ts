@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { Componente1Component } from "./componente1/componente1.component";
-import { CardComponent } from './card/card.component';
-import { TskManagerComponent } from './tsk-manager/tsk-manager.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 
-interface Product {
-  nombre: string;
-  precio: number;
-}
+// interface Product {
+//   nombre: string;
+//   precio: number;
+// }
 
 @Component({
   selector: 'app-root',
@@ -21,8 +18,6 @@ interface Product {
 export class AppComponent {
   title = 'Proyecto1';
   searchQuery : string = '';
-
-
   // products : Product[] = [
   //   { nombre: 'Plato de la casa (PATO)', precio: 50 },
   //   { nombre: 'Lomo Montado', precio: 45 },
@@ -43,19 +38,4 @@ export class AppComponent {
   //   { nombre: 'Pescado Pacú', precio: 50 },
   //   { nombre: 'Almuerzo Familiar', precio: 22 },
   // ]
-
-  // filteredProducts = this.products;
-  // cart : Product[] = [];
-
-
-  // search() {
-  //   this.filteredProducts = this.products.filter(product =>
-  //     product.nombre.toLowerCase().includes(this.searchQuery.toLowerCase())
-  //   );
-  // }
-  
-  // onAddToCart(product: Product) {
-  //   this.cart.push(product);
-  //   console.log('Carrito:', this.cart);
-  // }
 }

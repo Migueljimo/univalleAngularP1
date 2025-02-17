@@ -1,23 +1,26 @@
-<p>dashboard workssssssssssssssssssssssssssssssssssssssssssssssssssssss!</p>
 
 <div class="product-list">
   <header>
-    <input type="text" [(ngModel)]="searchQuery" placeholder="Buscar plato..." />
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      placeholder="Buscar plato..."
+    />
     <button (click)="search()">Buscar</button>
   </header>
-  
-  <app-card 
-    *ngFor="let product of filteredProducts" 
-    [product]="product" 
-    (click)="goToDetail(product.id)" 
-    (addToCart)="onAddToCart($event)">
-  </app-card>
-</div>
 
-<div class="cart">
-  <h3>Carrito de Compras</h3>
-  <ul>
-    <li *ngFor="let item of cart">{{ item.nombre }} - ${{ item.precio }}</li>
-  </ul>
-  <h2>Total: </h2>
+  <button (click)="toggleCart()">🛒 Ocultar el Carrito</button>
+
+  <!-- 🔥 Mostrar el carrito si showCart es true -->
+  <div *ngIf="showCart">
+    <app-shopping-cart></app-shopping-cart>
+  </div>
+
+  <app-card
+    *ngFor="let product of filteredProducts"
+    [product]="product"
+    (click)="goToDetail(product.id)"
+    (addToCart)="onAddToCart($event)"
+  >
+  </app-card>
 </div>

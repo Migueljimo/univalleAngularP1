@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CardComponent } from '../card/card.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 
 interface Product {
   id: number;
@@ -14,7 +15,7 @@ interface Product {
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CardComponent, FormsModule, CommonModule],
+  imports: [CardComponent, ShoppingCartComponent, FormsModule, CommonModule],
   providers: [ProductService],
   styleUrls: ['./dashboard.component.css'],
   templateUrl: './dashboard.component.html',
@@ -23,7 +24,7 @@ export class DashboardComponent {
   searchQuery: string = '';
   products: Product[] = [];
   filteredProducts: Product[] = [];
-  cart: Product[] = [];
+  //cart: Product[] = [];
 
   constructor(private productService: ProductService, private router: Router) {}
 
@@ -38,13 +39,27 @@ export class DashboardComponent {
     );
   }
 
+  // onAddToCart(product: Product) {
+  //   this.cart.push(product);
+  //   console.log('Carrito:', this.cart);
+  // }
+
   onAddToCart(product: Product) {
-    this.cart.push(product);
-    console.log('Carrito:', this.cart);
+    this.productService.addToCart(product); //Agregar producto al carrito desde el servicio
   }
+
+
 
   goToDetail(id: number) {
     this.router.navigate(['/detalle', id]);
+  }
+
+
+
+  showCart = true;
+
+  toggleCart() {
+    this.showCart = !this.showCart;
   }
   
 }

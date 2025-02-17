@@ -1,18 +1,18 @@
 <main class="main">
+  <nav class="navBar">
+    <ul class="navList">
+      <li>
+        <a routerLink="/dashboard" routerLinkActive="active" class="navButton"
+          >HOME</a
+        >
+        <a routerLink="/shopping-cart" routerLinkActive="active" class="navButton">🛒 Ver Carrito</a>
+
+      
+      </li>
+    </ul>
+  </nav>
   <section class="content">
     <router-outlet></router-outlet>
   </section>
 
-  <nav>
-    <ul>
-      <li><a routerLink="/dashboard" routerLinkActive="active">HOME</a></li>
-      <li><a routerLink="/dashboard/pages/detail-menu" routerLinkActive="active">DETAILS</a></li>
-      
-    </ul>
-  </nav>
-
 </main>
-
-
-
-<router-outlet />

@@ -1,9 +1,6 @@
-<p>card works!</p>
-
 <div class="product-card">
     <img src="" alt="img del [plato]">
     <h2>{{product.nombre}}</h2>
-    <p><strong>${{product.precio}}</strong></p>
-    <button (click) = "onAddToCart()">Add to Cart</button>
-
+    <p><strong>${{product.precio}}</strong></p>  
+    <button (click)="addToCartHandler($event)">Agregar al carrito</button>
 </div>

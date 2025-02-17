@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 interface Product {
   id: number;
@@ -32,6 +33,11 @@ export class ProductService {
     { id: 18, nombre: 'Almuerzo Familiar', precio: 22, descripcion: 'Menú especial del día con guarniciones caseras.' }
   ];
 
+// Cargar carrito desde localStorage
+private cart: Product[] = JSON.parse(localStorage.getItem('cart') || '[]');
+private cartSubject = new BehaviorSubject<Product[]>(this.cart);
+cart$ = this.cartSubject.asObservable();
+
   getProducts(): Product[] {
     return this.products;
   }
@@ -39,4 +45,35 @@ export class ProductService {
   getProductById(id: number): Product | undefined {
     return this.products.find(p => p.id === id);
   }
+
+
+  getCart(): Product[] {
+    return this.cart;
+  }
+
+
+
+  addToCart(product: Product) {
+    this.cart.push(product);
+    this.cartSubject.next([...this.cart]); // 🔄 Notificar cambios al carrito
+  }
+  
+  updateCart(cart: Product[]) {
+    this.cart = cart;
+    this.cartSubject.next([...this.cart]); // 🔄 Actualizar y notificar cambios
+  }
+
+
+  removeFromCart(index: number) {
+    this.cart.splice(index, 1);
+    this.updateCartStorage();
+  }
+
+  private updateCartStorage() {
+    localStorage.setItem('cart', JSON.stringify(this.cart));
+    this.cartSubject.next([...this.cart]); // Notificar cambios a los componentes suscritos
+  }
+  
+
+
 }

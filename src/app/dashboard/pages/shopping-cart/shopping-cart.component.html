@@ -1,0 +1,5 @@
+<h3>Carrito de Compras</h3>
+<ul>
+  <li *ngFor="let item of cart">{{ item.nombre }} - ${{ item.precio }}</li>
+</ul>
+<h2>Total: {{ getTotal() | currency }}</h2>
